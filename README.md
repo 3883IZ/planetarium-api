@@ -61,9 +61,9 @@ python manage.py runserver
 ---
 
 ## Usage
-Admin panel: http://127.0.0.1:8000/admin/
-API root: http://127.0.0.1:8000/api/
-API documentation (Swagger): http://127.0.0.1:8000/api/docs/
+- Admin panel:http://127.0.0.1:8000/admin/
+- API root:http://127.0.0.1:8000/api/
+- API documentation (Swagger):http://127.0.0.1:8000/api/docs/
 
 ## Database Structure
 The project includes the following entities:
@@ -73,6 +73,21 @@ PlanetariumDome – domes with rows and seats
 ShowSession – scheduled sessions of shows in domes
 Reservation – reservations created by users
 Ticket – tickets linked to reservations and sessions
+
+## Database Diagram
+
+The following diagram represents the relationships between models:
+
+- ShowTheme ↔ AstronomyShow (Many-to-Many)
+- AstronomyShow → ShowSession (One-to-Many)
+- PlanetariumDome → ShowSession (One-to-Many)
+- ShowSession → Ticket (One-to-Many)
+- Reservation → Ticket (One-to-Many)
+- User → Reservation (One-to-Many)
+
+## Database Diagram
+The following diagram represents the relationships between models:
+![Database ERD](docs/planetarium_erd.png)
 
 ## Screenshots
 Attach screenshots of:
