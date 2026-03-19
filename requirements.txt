@@ -1,5 +1,5 @@
-django
-djangorestframework
-drf-spectacular
-psycopg2-binary
-gunicorn
+django>=5.0,<6.0
+djangorestframework>=3.15,<4.0
+drf-spectacular>=0.27,<1.0
+psycopg2-binary>=2.9,<3.0
+gunicorn>=21.2,<22.0
