@@ -60,6 +60,17 @@ python manage.py runserver
 
 ---
 
+---
+
+## Run with Docker
+
+Make sure you have Docker and Docker Compose installed.
+
+Build and start the containers:
+docker-compose up --build
+
+---
+
 ## Usage
 - Admin panel:http://127.0.0.1:8000/admin/
 - API root:http://127.0.0.1:8000/api/
@@ -88,6 +99,10 @@ The following diagram represents the relationships between models:
 ## Database Diagram
 The following diagram represents the relationships between models:
 ![Database ERD](docs/planetarium_erd.png)
+
+### Custom Logic
+- Implemented filtering of shows by theme.
+  Example: `GET /api/shows/?theme=astronomy` will return only shows that belong to the "astronomy" theme.
 
 ## Screenshots
 Attach screenshots of:
