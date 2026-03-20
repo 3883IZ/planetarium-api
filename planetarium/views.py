@@ -23,10 +23,11 @@ class ShowThemeViewSet(viewsets.ModelViewSet):
 
 
 class AstronomyShowViewSet(viewsets.ModelViewSet):
+    queryset = AstronomyShow.objects.all()   # ✅ додали queryset
     serializer_class = AstronomyShowSerializer
 
     def get_queryset(self):
-        queryset = AstronomyShow.objects.all()
+        queryset = super().get_queryset()
         theme = self.request.query_params.get("theme")
         if theme:
             queryset = queryset.filter(themes__name__icontains=theme)
