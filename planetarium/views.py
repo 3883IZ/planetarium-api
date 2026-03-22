@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from .models import (
+from planetarium.models import (
     ShowTheme,
     AstronomyShow,
     PlanetariumDome,
@@ -7,7 +7,7 @@ from .models import (
     Reservation,
     Ticket,
 )
-from .serializers import (
+from planetarium.serializers import (
     ShowThemeSerializer,
     AstronomyShowSerializer,
     PlanetariumDomeSerializer,
@@ -23,7 +23,7 @@ class ShowThemeViewSet(viewsets.ModelViewSet):
 
 
 class AstronomyShowViewSet(viewsets.ModelViewSet):
-    queryset = AstronomyShow.objects.all()   # ✅ додали queryset
+    queryset = AstronomyShow.objects.all()
     serializer_class = AstronomyShowSerializer
 
     def get_queryset(self):

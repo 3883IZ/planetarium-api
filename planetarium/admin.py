@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import (
+from planetarium.models import (
     ShowTheme,
     AstronomyShow,
     PlanetariumDome,
