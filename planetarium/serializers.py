@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import (
+from planetarium.models import (
     ShowTheme,
     AstronomyShow,
     PlanetariumDome,
@@ -16,7 +16,6 @@ class ShowThemeSerializer(serializers.ModelSerializer):
 
 
 class AstronomyShowSerializer(serializers.ModelSerializer):
-    # ✅ тепер можна передавати список ID тем при створенні/оновленні
     themes = serializers.PrimaryKeyRelatedField(
         many=True,
         queryset=ShowTheme.objects.all()
